@@ -96,8 +96,9 @@ func doNew(appName string) {
 		}
 	}
 
-	_ = os.Remove(fmt.Sprintf("./%s/MakeFile.mac", appName))
-	_ = os.Remove(fmt.Sprintf("./%s/MakeFile.windows", appName))
+	_ = os.Remove("./" + appName + "/MakeFile.mac")
+	_ = os.Remove("./" + appName + "/MakeFile.windows")
+
 	// update tthe go.mod file
 	color.Yellow("\tCreating go.mod file...")
 	_ = os.Remove("./" + appName + "/go.mod")
